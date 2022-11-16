@@ -14,19 +14,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Beth+Ellen:wght@300;400;500&display=swap');
      
 $fontConfig: (
-  display-4: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  display-3: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  display-2: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  display-1: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  headline: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  title: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  subheading-2: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  subheading-1: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  body-2: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  body-1: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  button: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  caption: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em),
-  input: mat-typography-level(4px, 2px, 400, 'Beth Ellen', 0.2500em)
+  display-4: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  display-3: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  display-2: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  display-1: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  headline: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  title: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  subheading-2: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  subheading-1: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  body-2: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  body-1: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  button: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  caption: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em),
+  input: mat-typography-level(4px, 2px, 400, 'Lumeira', 0.2500em)
 );
 
 // Foreground Elements
@@ -243,6 +243,6 @@ $altTheme: mat-light-theme($theme-primary, $theme-accent, $theme-warn);
   font-size: 24px;
   font-family: 'Material Icons', 'Material Icons';  
   .mat-badge-content {
-    font-family: 'Beth Ellen';
+    font-family: 'Lumeira';
   }
 }

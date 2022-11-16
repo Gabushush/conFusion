@@ -34,18 +34,51 @@ $conFusion-theme: mat.define-light-theme((
 @include mat.all-component-themes($conFusion-theme);
 
 @font-face {
-  font-family: 'Beth Ellen';
-  src: url(assets/BethEllen-Regular.ttf) format("truetypefont");
+  font-family: 'Lumeira';
+  src: url(assets/Lumiera.ttf) format("truetypefont");
 }
 
 /* You can add global styles to this file, and also import other style files */
 *{
-  font-family: 'Beth Ellen';
+  font-family: 'Lumeira';
 }
-html, body { height: 100%;  font-family: 'Beth Ellen' !important;}
-body { margin: 0; font-family: 'Beth Ellen';}
+html, body { height: 100%;  font-family: 'Lumeira' !important;}
+body { margin: 0; font-family: 'Lumeira';}
 
 .container{
   margin: 20px;
   display: flex;
+}
+
+
+$lt-gray: #ddd;
+$background-dark: #902a3f;
+$background-light: #b73650;
+$background-pale: #cc546c;
+$primary-color-dark:   #902a3f;
+$primary-color:        #b73650;
+$primary-color-light:  #cbb26b;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #be9e45;
+$primary-text-color:   #212121;
+$secondary-text-color: #757575;
+$divider-color:        #BDBDBD;
+
+@mixin zero-margin($pad-up-down, $pad-left-right) {
+    margin: 0px auto;
+    padding: $pad-up-down $pad-left-right;
+}
+
+.background-primary {
+    background-color: $background-dark!important;
+  }
+.background-accent {
+    background-color: $accent-color!important;
+  }
+.text-floral-white {
+    color: floralwhite!important;
+}
+
+.flex-spacer {
+  flex: 1 1 auto;
 }
