@@ -2,11 +2,11 @@
     fxLayout="row"
     fxLayout.sm="column"
     fxLayout.xs="column"
-    fxLayoutAlign.gt-md="space-around center"
     fxLayoutGap="10px" 
-    fxLayoutGap.xs="0">
+    fxLayoutGap.xs="0"
+    style="margin: 8em;">
 
-  <div fxFlex="40" *ngIf="dish">
+  <div style="width:50% ;">
     <mat-card>
         <mat-card-header>
             <mat-card-title>
@@ -20,35 +20,28 @@
             </p>
         </mat-card-content>
         <mat-card-actions>
+            <button mat-button (click)="goBack()">BACK</button>
             <button mat-button>LIKE</button>
             <button mat-button>SHARE</button>
         </mat-card-actions>
     </mat-card>
   </div>
 
-  <div fxFlex="40" *ngIf="dish">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>
-                <h1>Comments</h1>
-            </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <mat-list fxFlex>
-                <mat-list-item *ngFor="let dish of dish.comments">
-                  <p matLine>
-                    <span> {{dish.comment}} </span>
-                  </p>
-                  <p matLine>
-                    <span> {{dish.rating}} stars</span>
-                  </p>
-                  <p matLine>
-                    <span>--{{dish.author}} {{dish.date | date}}</span>
-                  </p>
-                </mat-list-item>
-              </mat-list>
-        </mat-card-content>
-    </mat-card>
+  <div style="margin-left: 5em;" >
+    <h1 style="font-size: 50px; font-weight: bolder;">Comments</h1>
+    <br>
+    <div *ngFor="let dish of dish.comments">
+      <p >
+        <span> {{dish.comment}} </span>
+      </p>
+      <p >
+        <span> {{dish.rating}} stars</span>
+      </p>
+      <p >
+        <span>--{{dish.author}} {{dish.date | date}}</span>
+      </p>
+      <br>
+    </div>
   </div>
 
 </div>
