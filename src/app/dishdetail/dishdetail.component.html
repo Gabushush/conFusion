@@ -7,7 +7,7 @@
     style="margin: 8em;">
 
   <div style="width:50% ;">
-    <mat-card>
+    <mat-card *ngIf="dish">
         <mat-card-header>
             <mat-card-title>
                 <h1>{{dish.name | uppercase}}</h1>
@@ -27,21 +27,24 @@
     </mat-card>
   </div>
 
-  <div style="margin-left: 5em;" >
+  <!-- <div style="margin-left: 5em;" > -->
+    <div fxFlex="40" >
+    <mat-list *ngIf="dish">
     <h1 style="font-size: 50px; font-weight: bolder;">Comments</h1>
     <br>
-    <div *ngFor="let dish of dish.comments">
-      <p >
-        <span> {{dish.comment}} </span>
-      </p>
-      <p >
-        <span> {{dish.rating}} stars</span>
-      </p>
-      <p >
-        <span>--{{dish.author}} {{dish.date | date}}</span>
+    <mat-list-item *ngFor="let dish of dish.comments">
+      <h4 matLine> {{dish.comment}} </h4>
+      <p matLine>{{dish.rating}} stars</p>
+      <p matLine>
+        <span>-- {{dish.author}} {{dish.date | date}}</span>
       </p>
       <br>
-    </div>
+    </mat-list-item>
+  </mat-list>
+  </div>
+
+  <div fxFlex [hidden]="dish">
+    <mat-spinner></mat-spinner><h4>Loading.... Please Wait</h4>
   </div>
 
 </div>
