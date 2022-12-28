@@ -45,9 +45,56 @@
       </p>
       <br>
     </mat-list-item>
-  </mat-list>
-  </div>
+    
+    <mat-list-item *ngIf="commentForm.dirty || !submitted">
+      <h4 matLine> {{commentForm.value.comment}} </h4>
+      <p matLine>{{finalValue}} 
+        <span *ngIf="finalValue==1">star</span><span *ngIf="finalValue>1">stars</span></p>
+      <p matLine>
+        <span>--{{commentForm.value.author}} {{comments.date | date}}</span>
+      </p>
+      <br>
+    </mat-list-item>
+    <br>
+    <mat-list-item *ngIf="submitted">
+      <div *ngFor="let commentadded of commentArr">
+      <h4 matLine> {{commentadded.comment}} </h4>
+      <p matLine>{{finalValue}} 
+        <span *ngIf="finalValue==1">star</span><span *ngIf="finalValue>1">stars</span></p>
+      <p matLine>
+        <span>--{{commentadded.author}} {{comments.date | date}}</span>
+      </p>
+      <br>
+    </div>
+    </mat-list-item>
+    <br>
 
+  </mat-list>
+  
+  <div class="form-size">
+    <form novalidate [formGroup]="commentForm" #commForm="ngForm" (ngSubmit)="onSubComm()">
+
+      <p>
+        <mat-form-field class="full-width">
+          <input matInput formControlName="author" placeholder="Author name" type="text" required >
+          <mat-error *ngIf="formErr.author">{{formErr.author}}</mat-error>
+        </mat-form-field>
+        <br>
+       
+          <mat-slider formControlName="rating" [min]="0" [max]="5" [step]="1" (change)="onInputChange($event)"   [thumbLabel]="true"> 
+          </mat-slider>
+          <span>{{finalValue}}</span>
+        <br>
+
+        <mat-form-field class="full-width" >
+          <textarea matInput formControlName="comment" placeholder="Please provide your comments" rows="2" required></textarea>
+        </mat-form-field>
+      </p>
+      <button type="submit" mat-button class="background-primary text-floral-white" [disabled]="commentForm.invalid">Submit</button>
+
+    </form>
+  </div>
+</div>
   <div fxFlex [hidden]="dish">
     <mat-spinner></mat-spinner><h4>Loading.... Please Wait</h4>
   </div>
