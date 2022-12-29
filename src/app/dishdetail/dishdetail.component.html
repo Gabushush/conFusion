@@ -45,7 +45,7 @@
       </p>
       <br>
     </mat-list-item>
-    
+
     <mat-list-item *ngIf="commentForm.dirty || !submitted">
       <h4 matLine> {{commentForm.value.comment}} </h4>
       <p matLine>{{finalValue}} 
@@ -55,9 +55,8 @@
       </p>
       <br>
     </mat-list-item>
-    <br>
-    <mat-list-item *ngIf="submitted">
-      <div *ngFor="let commentadded of commentArr">
+    <div *ngIf="submitted">
+    <mat-list-item  *ngFor="let commentadded of commentArr">
       <h4 matLine> {{commentadded.comment}} </h4>
       <p matLine>{{finalValue}} 
         <span *ngIf="finalValue==1">star</span><span *ngIf="finalValue>1">stars</span></p>
@@ -65,9 +64,8 @@
         <span>--{{commentadded.author}} {{comments.date | date}}</span>
       </p>
       <br>
-    </div>
     </mat-list-item>
-    <br>
+  </div>
 
   </mat-list>
   
