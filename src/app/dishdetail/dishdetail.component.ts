@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { switchMap } from 'rxjs/operators';
@@ -54,7 +54,8 @@ export class DishdetailComponent implements OnInit {
 
   constructor(private dishservice: DishService,
     private route: ActivatedRoute,
-    private location: Location, private fb:FormBuilder) { this.createForm()}
+    private location: Location, private fb:FormBuilder,
+    @Inject('baseURL') public baseURL:any) { this.createForm()}
 
   ngOnInit() {
     this.dishservice.getDishIds().subscribe(dishIds => this.dishIds = dishIds);
@@ -99,7 +100,7 @@ export class DishdetailComponent implements OnInit {
         }
       }
      } 
-  }
+  } 
 
   goBack(): void {
     this.location.back();
