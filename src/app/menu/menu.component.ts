@@ -11,6 +11,7 @@ import { baseURL } from '../shared/baseurl';
 export class MenuComponent implements OnInit {
 
   dishes: Dish[];
+  errMess: string;
 
   // selectedDish: Dish;
 
@@ -22,7 +23,10 @@ export class MenuComponent implements OnInit {
     @Inject('baseURL') public baseURL:any ) { }
 
   ngOnInit() {
-    this.dishService.getDishes().subscribe((dishes) =>{this.dishes = dishes});
+    this.dishService.getDishes().subscribe((dishes) =>{this.dishes =      
+      dishes},
+      errMess => this.errMess = <any>errMess);
+
     console.log(this.dishes)
   }
 

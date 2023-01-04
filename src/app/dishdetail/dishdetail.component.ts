@@ -50,6 +50,7 @@ export class DishdetailComponent implements OnInit {
   };
   newdate: string;
   submitted: boolean = false;
+  errMess: string;
 
 
   constructor(private dishservice: DishService,
@@ -64,7 +65,8 @@ export class DishdetailComponent implements OnInit {
         this.dishservice.getDish(params['id']))).subscribe(dish => {    
           this.dish = dish; 
           this.setPrevNext(dish.id); 
-        });
+        },
+        errMess => this.errMess = <any>errMess);
     console.log("in dish detail", this.dish, this.dishIds)
   }
 
