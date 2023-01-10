@@ -27,7 +27,7 @@ export class HomeComponent implements OnInit {
     dishErrMess => this.dishErrMess=<any>dishErrMess);
     this.promotionService.getFeaturedPromotion().subscribe((promotion)=>{this.promotion = promotion;});
 
-    this.leaderService.getFeaturedDish().subscribe((leader) => {
+    this.leaderService.getFeaturedLeader().subscribe((leader) => {
       this.leader=leader;
     });
   }
